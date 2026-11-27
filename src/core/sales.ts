@@ -5,7 +5,9 @@ export type SalesSummary =
   | { status: "insuficiente"; n: number };
 
 /**
- * Resume as vendas com float dentro de `window` (inclusive) do float alvo.
+ * Resume as vendas com float dentro de `window` (inclusive) do float alvo, **do mesmo grupo de sticker**:
+ * item com sticker só compara com vendas com sticker, e o limpo só com as limpas (misturar contamina
+ * os dois lados). Grupo com menos de `minSamples` vendas vira "insuficiente": nunca cai na mistura.
  * Mediana de n par: média dos dois do meio, meio centavo para cima.
  */
 export function summarizeSales(
@@ -13,9 +15,11 @@ export function summarizeSales(
   targetFloat: number,
   window: number,
   minSamples: number,
+  itemHasStickers: boolean,
 ): SalesSummary {
   const prices = sales
     .filter((s) => Math.abs(s.float - targetFloat) <= window)
+    .filter((s) => (s.stickerCount > 0) === itemHasStickers)
     .map((s) => s.price)
     .sort((a, b) => a - b);
   const n = prices.length;

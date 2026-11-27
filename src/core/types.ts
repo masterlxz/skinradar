@@ -23,6 +23,8 @@ export interface Sale {
   float: number;
   soldAt: string;
   type: string;
+  /** Quantos stickers o item vendido tinha (a venda só compara com item do mesmo grupo). */
+  stickerCount: number;
 }
 
 export interface BuyOrder {
