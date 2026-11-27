@@ -359,9 +359,11 @@ MUTACOES = [
     ("M110 campos da configuração sem rótulo", "src/ui/painel.ts",
      "erro.campos.map(rotuloCampo)", "erro.campos",
      ["estado de erro: configuração incompleta"]),
-    ("M111 texto do site interpretado como HTML", "src/ui/painel.ts",
-     "e.textContent = texto;", "e.innerHTML = texto;",
-     ["nome de skin e stickers com HTML malicioso", "o código do painel não usa innerHTML"]),
+    # Atribuir `innerHTML` com o texto malicioso derrubou o job inteiro duas vezes (SIGTERM no linkedom),
+    # então esta mutação só prova o teste que lê o código; o comportamento fica com o teste do HTML malicioso.
+    ("M111 uso de innerHTML no código do painel", "src/ui/painel.ts",
+     "e.textContent = texto;", "e.textContent = texto; // innerHTML",
+     ["o código do painel não usa innerHTML"]),
 ]
 
 NOME_FALHA = re.compile(r"^\s*✖ (.+?) \(\d+(?:\.\d+)?ms\)\s*$", re.MULTILINE)
