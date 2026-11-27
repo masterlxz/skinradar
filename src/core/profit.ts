@@ -14,12 +14,19 @@ export interface ExitResult {
   taxa: Cents;
   custos: Cents;
   lucro: Cents;
-  /** lucro * 100 / compra, sem arredondar. */
+  /** lucro * 100 / compra, sem arredondar (arredondar aqui mudaria a classificação no limite). */
   roiPct: number;
 }
 
+/** Lucro = venda − taxa − custos − compra, tudo em centavos inteiros; taxa com meio centavo para cima. */
 export function evaluateExit(input: ExitInput): ExitResult {
-  throw new Error("não implementado");
+  const { compra, venda, taxaBp, custos } = input;
+  if (!Number.isInteger(compra) || compra <= 0) {
+    throw new RangeError("a compra deve ser um inteiro positivo (ROI é indefinido sem ela)");
+  }
+  const taxa = Math.round((venda * taxaBp) / 10000);
+  const lucro = venda - taxa - custos - compra;
+  return { compra, venda, taxa, custos, lucro, roiPct: (lucro * 100) / compra };
 }
 
 export interface References {
@@ -41,5 +48,11 @@ export function evaluateExits(
   taxaBp: number,
   custos: Cents,
 ): Exits {
-  throw new Error("não implementado");
+  const avaliar = (venda: Cents | null): ExitResult | null =>
+    venda === null ? null : evaluateExit({ compra, venda, taxaBp, custos });
+  return {
+    mercado: avaliar(refs.mercado),
+    menorAnuncio: avaliar(refs.menorAnuncio),
+    buyOrder: avaliar(refs.buyOrder),
+  };
 }

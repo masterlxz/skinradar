@@ -15,6 +15,46 @@ export interface SplitOrders {
   bestGeneric: BuyOrder | null;
 }
 
+function maisCara(orders: BuyOrder[]): BuyOrder | null {
+  let best: BuyOrder | null = null;
+  for (const o of orders) {
+    if (best === null || o.price > best.price) best = o;
+  }
+  return best;
+}
+
+function temFaixa(o: BuyOrder): boolean {
+  return o.minFloat !== undefined || o.maxFloat !== undefined;
+}
+
+/** Separa as Buy Orders pelo que cada uma significa para o item (float inclusivo nos dois lados). */
 export function splitOrders(orders: BuyOrder[], itemFloat: number, floorCents: Cents): SplitOrders {
-  throw new Error("não implementado");
+  const eligible: BuyOrder[] = [];
+  const stickerOnly: BuyOrder[] = [];
+  const outOfRange: BuyOrder[] = [];
+  const belowFloor: BuyOrder[] = [];
+
+  for (const o of orders) {
+    if (o.stickers.length > 0) {
+      stickerOnly.push(o);
+    } else if (
+      (o.minFloat !== undefined && itemFloat < o.minFloat) ||
+      (o.maxFloat !== undefined && itemFloat > o.maxFloat)
+    ) {
+      outOfRange.push(o);
+    } else if (o.price < floorCents) {
+      belowFloor.push(o);
+    } else {
+      eligible.push(o);
+    }
+  }
+
+  return {
+    eligible,
+    stickerOnly,
+    outOfRange,
+    belowFloor,
+    best: maisCara(eligible),
+    bestGeneric: maisCara(eligible.filter((o) => !temFaixa(o))),
+  };
 }
