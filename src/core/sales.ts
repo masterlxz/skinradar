@@ -13,6 +13,8 @@ export function summarizeSales(
   targetFloat: number,
   window: number,
   minSamples: number,
+  // ESBOÇO (testes primeiro): ainda ignorado, a mediana segue misturando os dois grupos.
+  itemHasStickers: boolean,
 ): SalesSummary {
   const prices = sales
     .filter((s) => Math.abs(s.float - targetFloat) <= window)

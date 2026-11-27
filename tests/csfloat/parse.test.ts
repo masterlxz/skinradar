@@ -35,6 +35,18 @@ test("vendas: 15 vendas com preço, float e data", () => {
   assert.ok(Math.abs((v[0]?.float ?? 0) - 0.209) < 0.0005);
 });
 
+test("vendas: stickerCount é o tamanho da lista de stickers do item (0, 0, 5, 4, 4)", () => {
+  const v = unwrap(parseSales(fixture("vendas.json")));
+  assert.deepEqual(v.slice(0, 5).map((x) => x.stickerCount), [0, 0, 5, 4, 4]);
+});
+
+test("vendas: item sem a lista de stickers conta como zero sticker", () => {
+  const r = parseSales([
+    { price: 100, sold_at: "2026-11-27T00:00:00Z", type: "buy_now", item: { float_value: 0.2 } },
+  ]);
+  assert.equal(r.ok && r.value[0]?.stickerCount, 0);
+});
+
 test("buy orders: ordem de sticker traz id e posição; a de 77 não traz posição", () => {
   const o = unwrap(parseBuyOrders(fixture("buy-orders-sticker-77-66.json")));
   assert.equal(o.length, 11);

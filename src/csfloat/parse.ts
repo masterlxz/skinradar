@@ -81,7 +81,8 @@ export function parseSales(raw: unknown): Parsed<Sale[]> {
     }
     const float = floatDoItem(item, i);
     if (!float.ok) return float;
-    return { ok: true, value: { price, float: float.value, soldAt, type } };
+    // ESBOÇO (testes primeiro): stickerCount ainda não é lido do item.
+    return { ok: true, value: { price, float: float.value, soldAt, type, stickerCount: 0 } };
   });
 }
 

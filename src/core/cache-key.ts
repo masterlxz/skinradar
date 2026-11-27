@@ -1,19 +1,14 @@
-import type { Sticker } from "./types.ts";
-
 export interface CacheKeyInput {
   marketHashName: string;
   float: number;
-  stickers: Sticker[];
+  /** Nomes dos stickers (o card do marketplace só traz o nome; o CSFloat também devolve `name`). */
+  stickers: string[];
 }
 
 /**
- * Chave de cache: nome, float no milésimo e stickers (id e posição, em ordem estável).
- * Float ou sticker diferentes mudam o preço e as Buy Orders, então não podem dividir a chave.
+ * Chave de cache: nome, float no milésimo e nomes de sticker (em ordem estável).
+ * ESBOÇO (testes primeiro): os stickers ainda não entram na chave.
  */
 export function cacheKey(input: CacheKeyInput): string {
-  const stickers = input.stickers
-    .map((s) => `${s.id}@${s.slot ?? "*"}`)
-    .sort()
-    .join(",");
-  return `${input.marketHashName}|f=${input.float.toFixed(3)}|s=${stickers}`;
+  return `${input.marketHashName}|f=${input.float.toFixed(3)}`;
 }
