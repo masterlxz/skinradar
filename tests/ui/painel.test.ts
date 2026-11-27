@@ -244,3 +244,20 @@ test("o CSS exportado estiliza o painel e não busca nada na rede", () => {
   assert.ok(CSS.includes(".sr-painel"));
   assert.equal(/@import|url\(/i.test(CSS), false);
 });
+
+test("estado de erro: card ilegível diz o motivo de cada tipo de falha do leitor", () => {
+  const doc = pagina("") as Document;
+  const esperado: [string, string][] = [
+    ["preco_invalido", "Não consegui ler este card: o preço está em formato inesperado."],
+    ["sem_preco", "Não consegui ler este card: o preço não foi encontrado."],
+    ["sem_nome", "Não consegui ler este card: o nome do item não foi encontrado."],
+    ["sem_id", "Não consegui ler este card: o id do item não foi encontrado."],
+  ];
+  for (const [motivo, frase] of esperado) {
+    const e = renderEstado(doc, {
+      tipo: "erro",
+      erro: { kind: "card_ilegivel", motivo: motivo as "preco_invalido" | "sem_preco" | "sem_nome" | "sem_id" },
+    });
+    assert.equal(e.textContent?.trim(), frase, motivo);
+  }
+});

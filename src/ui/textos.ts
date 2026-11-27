@@ -1,3 +1,4 @@
+import type { AdapterError } from "../adapters/types.ts";
 import type { Aviso } from "../analysis/analisar.ts";
 import type { Classificacao } from "../core/classify.ts";
 import type { CsfloatError } from "../csfloat/types.ts";
@@ -49,6 +50,18 @@ export function textoErro(fonte: string, erro: CsfloatError): string {
     case "http":
       return `${fonte}: o CSFloat respondeu HTTP ${erro.status}.`;
   }
+}
+
+const MOTIVOS_CARD: Record<AdapterError["kind"], string> = {
+  preco_invalido: "o preço está em formato inesperado",
+  sem_preco: "o preço não foi encontrado",
+  sem_nome: "o nome do item não foi encontrado",
+  sem_id: "o id do item não foi encontrado",
+};
+
+/** Por que o leitor do card falhou, em uma oração (sem ponto final). */
+export function motivoCard(kind: AdapterError["kind"]): string {
+  return MOTIVOS_CARD[kind];
 }
 
 const CAMPOS: Record<string, string> = {
