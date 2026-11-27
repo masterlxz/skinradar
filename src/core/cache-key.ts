@@ -6,9 +6,11 @@ export interface CacheKeyInput {
 }
 
 /**
- * Chave de cache: nome, float no milésimo e nomes de sticker (em ordem estável).
- * ESBOÇO (testes primeiro): os stickers ainda não entram na chave.
+ * Chave de cache: nome, float no milésimo e nomes de sticker em ordem estável (repetição conta).
+ * Float ou sticker diferentes mudam o preço e as Buy Orders, então não podem dividir a chave.
+ * Os nomes entram como JSON porque contêm " | " e qualquer separador simples seria ambíguo.
  */
 export function cacheKey(input: CacheKeyInput): string {
-  return `${input.marketHashName}|f=${input.float.toFixed(3)}`;
+  const stickers = JSON.stringify([...input.stickers].sort());
+  return `${input.marketHashName}|f=${input.float.toFixed(3)}|s=${stickers}`;
 }
