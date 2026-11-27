@@ -2,7 +2,9 @@
 
 > Última atualização: 2026-11-27 (Sessão 1)
 
-**Status: pré-projeto, Fase 1 (prova de viabilidade) não iniciada.**
+**Status: Fase 1 concluída (medições do CSFloat); Fase 2 em andamento: núcleo, cliente, leitor do card do
+DashSkins e orquestrador da análise (2b-2a) prontos; falta a casca da extensão (2b-2b: build, manifest,
+service worker, botão, painel, opções) e os adaptadores do RentSkins e do `.gg`.**
 
 ## O que é
 Extensão de navegador pessoal que, a pedido do usuário (clique), analisa um anúncio de skin de CS2

@@ -23,6 +23,8 @@
 | P14 | **Bloqueio de troca** ("Unlocks in N days") aparece no card do DashSkins e não está no PRD: decisão do dono é analisar e avisar no painel. Falta saber se um item bloqueado pode ser listado no CSFloat antes do desbloqueio (não medido) | Cards do DashSkins | Média |
 | P15 | **Cobertura do leitor do card**: só 2 cards vistos (luvas FT e AK-47 FN) em inglês. Faltam facas, agentes, adesivos, caixas, StatTrak™, Souvenir, itens sem float, chaveiros ("Charm") e o português (`R$ 1.399,99`, hoje erro `preco_invalido`). Pedir mais `outerHTML` ao dono e acrescentar fixtures antes de a 2b-2 prometer "funciona em qualquer item" | PR #5 | Média |
 | P16 | **Float do marcador** (`style="left: 5.48621%"`) é um detalhe de apresentação lido como dado: 2 cards consistentes com o texto truncado, mas se o site mudar o estilo o leitor cai no texto (`floatSource: "texto"`, 3 casas). Conferir um float conhecido (página do item ou CSFloat) contra o marcador | PR #5 | Média |
+| P17 | **Cache não guarda análise com fonte falha** (2b-2a): um erro de Buy Orders refaz as 3 chamadas no clique seguinte e gasta o limite de 20 por minuto. Alternativa: guardar por fonte as que deram certo. Decidir ao ver o uso real na 2b-2b | PR #6 | Baixa |
+| P18 | **Configuração obrigatória sem padrão** (2b-2a): taxa (P9), cotação (P3), janela de float (P11), piso de Buy Order e validade do cache. A página de opções da 2b-2b precisa pedi-las; sem elas a análise recusa com `config_invalida` | PR #6 | Média (2b-2b) |
 | P6 | Endpoints não documentados do CSFloat só com decisão explícita do dono (termos de uso), e só se a API oficial não cobrir vendas/Buy Orders | PRD 4.2 | Média |
 
 ## Resolvidas
