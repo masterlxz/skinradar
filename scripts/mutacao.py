@@ -20,7 +20,7 @@ MUTACOES = [
      'if (mercado.roiPct > roiMinPct / 2) return "moderada";',
      ["ROI de exatamente 7,5%"]),
     ("M03 inflacionada nunca dispara", "src/core/classify.ts",
-     "menorAnuncio.roiPct >= roiMinPct &&", "false &&",
+     "menorAnuncio.roiPct >= roiMinPct &&", "menorAnuncio.roiPct >= roiMinPct * 1000 &&",
      ["lucro só contra o menor anúncio"]),
     ("M04 baixa liquidez some", "src/core/classify.ts",
      'return vendas.n === 0 ? "dados_insuficientes" : "baixa_liquidez";',
