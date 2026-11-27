@@ -88,11 +88,15 @@ function lerFloat(card: Element): { float: number | null; floatSource: "marcador
   return { float: null, floatSource: null };
 }
 
+/** Lê o texto de cada `<span>` isolado: `textContent` do card cola os textos sem separador ("RifleWithdrawable"). */
 function lerBloqueio(card: Element): CardData["tradeLock"] {
-  const texto = card.textContent ?? "";
-  const dias = /Unlocks in (\d+) days?/i.exec(texto);
-  if (dias !== null) return { dias: Number(dias[1]) };
-  return /\bWithdrawable\b/i.test(texto) ? "livre" : null;
+  for (const span of Array.from(card.querySelectorAll("span"))) {
+    const texto = (span.textContent ?? "").trim();
+    const dias = /^Unlocks in (\d+) days?$/i.exec(texto);
+    if (dias !== null) return { dias: Number(dias[1]) };
+    if (/^Withdrawable$/i.test(texto)) return "livre";
+  }
+  return null;
 }
 
 export function readCard(card: Element): Lido<CardData> {
