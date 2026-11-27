@@ -11,4 +11,6 @@ anúncios ativos, vendas recentes e Buy Orders do CSFloat, e calculando lucro l�
 - Estado do projeto: [`project/OVERVIEW.md`](project/OVERVIEW.md)
 - Pendências: [`project/PENDING.md`](project/PENDING.md)
 
+- Decisões: [`project/adr/`](project/adr/) · Licença: MIT ([`LICENSE`](LICENSE))
+
 Princípio: nenhuma consulta automática durante a navegação; toda análise começa num clique.

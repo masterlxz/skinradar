@@ -1,6 +1,8 @@
 # ADR 0001: Fontes de dados do CSFloat e escolha do anúncio-âncora
 
-- **Status:** Proposto (2026-11-27), aguardando aprovação do dono.
+- **Status:** Aceito (2026-11-27) pelo dono, com a decisão 7 e a decisão 8 acrescentadas na aprovação.
+  O dono cogitou baixar HTML em vez de usar a API; a API entrega os campos necessários (float, seed,
+  stickers com nome e preço, vendas com data, Buy Orders com requisitos), então a decisão 1 se mantém.
 - **Evidência:** `lab/medir-csfloat.md` (rodadas 1, 2, 3 e 3b), medições reais com a chave do dono, item
   `AK-47 | Redline (Field-Tested)`. A documentação oficial do CSFloat **não foi lida** (`docs.csfloat.com`
   não resolve; `csfloat.com/api` dá 404): os endpoints são **observados, não documentados**.
@@ -44,6 +46,13 @@ devolveu como `2081`, o que descarta reais e implica ~5,65 R$/US$, mas falta ver
 6. **Uma análise = 1 chamada de listings (âncora e menor anúncio), 1 de vendas e 1 de Buy Orders.** Cache pela
    chave (`market_hash_name`, float arredondado ao milésimo, stickers); respeitar `x-ratelimit-remaining`
    e tratar 429.
+7. **Moeda:** a API não traz preço em real (o R$ do site é conversão de exibição). A cotação USD→BRL é um
+   **campo nas configurações, preenchido pelo dono**, sem consulta externa; valor inicial sugerido
+   ~5,65 (razão implícita de um anúncio em 2026-11-27, não é cotação oficial). Todo valor do painel
+   deixa claro a moeda em que está.
+8. **HTML só onde a API não alcança:** o HTML dos marketplaces de origem é lido para extrair o card
+   (Fase 2). Se aparecer um dado que a API do CSFloat não cobre, mede-se o HTML **só para esse dado**,
+   com ADR novo; a fonte principal não muda.
 
 ## Alternativas descartadas
 
