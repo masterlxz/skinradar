@@ -33,6 +33,17 @@
 - **Feito também**: repo criado, `.github/` (template de PR e `guard`, do `padrao/`), PR #1 (fundação,
   `guard` verde, mesclado em `d288ccf`), ruleset `protect-main` ligado (ativo, `guard` obrigatório),
   secret scanning, push protection e alertas do Dependabot ligados.
-- **Próximo**: HTML de um card real do DashSkins (ou RentSkins) e plano da Fase 2.
+- **Fase 2a (PR #3, branch `fase-2a-nucleo`)**: núcleo puro (`src/core`: money, anchor, orders, sales,
+  profit, classify, cache-key) e cliente do CSFloat (`src/csfloat`), com `node:test` e `typescript`
+  7.0.2 (+ `@types/node` 24.19.4, só tipos). Decisões do dono: ROI mínimo 15% (moderada de 7,5%),
+  mínimo de 5 vendas, regra de "referência inflacionada" (lucro só contra o menor anúncio) e distinção
+  baixa liquidez × dados insuficientes. Testes primeiro: no CI, antes de implementar, 46 falharam e 3
+  arquivos quebraram ao carregar (as 22 asserções deles só rodaram depois); depois, **68 de 68 passam**
+  (Node 24.22.3). **Mutação planejada, conferida pelo nome: 28 de 28 derrubaram os testes previstos**
+  (`scripts/mutacao.py`, workflow `Mutação`); a M03 foi trocada por ser recusada pelo compilador.
+- **Não verificado**: Node/CI só leram as fixtures de 2026-11-27 (Redline FT); taxa oficial (P9); `limit`
+  do endpoint de Buy Orders (P10); a janela de float das vendas (P11); nada de DOM, extensão ou build.
+- **Próximo**: mesclar o PR #3; plano da Fase 2b (adaptador do DashSkins, botão, painel): preciso do
+  `outerHTML` de um card do DashSkins.com.br e da aba Network (Fetch/XHR) da listagem.
 - **Não verificado**: documentação oficial; outros itens além do Redline FT; a chave está
   em `~/.config/skinradar/csfloat.key` nesta máquina (confirmar se é PC ou VM).
