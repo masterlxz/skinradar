@@ -118,6 +118,7 @@ test("clicar no botão do card dispara a análise daquele card", async () => {
   (botao(cards[0]!) as HTMLElement).click();
   assert.equal(pedidos.length, 1);
   assert.equal(pedidos[0]?.item.marketHashName, "★ Specialist Gloves | Tiger Strike (Field-Tested)");
+  assert.equal(pedidos[0]?.forcar, false);
   liberar[0]?.();
   await tick();
 });
