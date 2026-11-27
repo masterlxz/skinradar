@@ -25,6 +25,8 @@
 | P16 | **Float do marcador** (`style="left: 5.48621%"`) é um detalhe de apresentação lido como dado: 2 cards consistentes com o texto truncado, mas se o site mudar o estilo o leitor cai no texto (`floatSource: "texto"`, 3 casas). Conferir um float conhecido (página do item ou CSFloat) contra o marcador | PR #5 | Média |
 | P17 | **Cache não guarda análise com fonte falha** (2b-2a): um erro de Buy Orders refaz as 3 chamadas no clique seguinte e gasta o limite de 20 por minuto. Alternativa: guardar por fonte as que deram certo. Decidir ao ver o uso real na 2b-2b | PR #6 | Baixa |
 | P18 | **Configuração obrigatória sem padrão** (2b-2a): taxa (P9), cotação (P3), janela de float (P11), piso de Buy Order e validade do cache. A página de opções da 2b-2b precisa pedi-las; sem elas a análise recusa com `config_invalida` | PR #6 | Média (2b-2b) |
+| P19 | **Data e hora de cada venda no painel** (PRD 5.2): a `Analise` só traz n, mediana, mínimo e máximo; falta carregar `soldAt` das vendas usadas e mostrá-las | PR #7 | Média |
+| P20 | **2b-2c (casca da extensão)**: esbuild (avaliação feita, veredito provisório "adotar com ressalva", `package.json` ainda não mexido), `manifest.json` MV3 só para `dashskins.com.br`, service worker, content script (`MutationObserver`, botão, shadow root com o `CSS` do painel), página de opções (configuração obrigatória, P18), `chrome.d.ts` próprio mínimo no lugar de `@types/chrome`, adaptador de `chrome.storage.session` para a porta `Armazem`. Só o dono prova no Chrome (ADR 0017) | PR #7 | Alta |
 | P6 | Endpoints não documentados do CSFloat só com decisão explícita do dono (termos de uso), e só se a API oficial não cobrir vendas/Buy Orders | PRD 4.2 | Média |
 
 ## Resolvidas

@@ -8,7 +8,7 @@ import { summarizeSales, type SalesSummary } from "../core/sales.ts";
 import type { BuyOrder, Cents, Listing, Sale } from "../core/types.ts";
 import type { Client } from "../csfloat/client.ts";
 import type { CsfloatError, Result } from "../csfloat/types.ts";
-import { criarCache } from "./cache.ts";
+import { criarCache, type Armazem } from "./cache.ts";
 import { validarConfig, type Config } from "./config.ts";
 
 /** O que a análise precisa saber do item, venha ele de qual marketplace vier (PRD, seção 12). */
@@ -72,8 +72,32 @@ function fonte<T>(r: Result<T>): Fonte<T> {
   return r.ok ? { ok: true, value: r.value } : { ok: false, error: r.error };
 }
 
-export function criarAnalisador(deps: { client: Client; agora: () => number }) {
-  const cache = criarCache<Dados>(deps.agora);
+function ehFonte(x: unknown): boolean {
+  if (typeof x !== "object" || x === null) return false;
+  const f = x as Record<string, unknown>;
+  if (f["ok"] === true) return Array.isArray(f["value"]);
+  return f["ok"] === false && typeof f["error"] === "object" && f["error"] !== null;
+}
+
+/** Confere o formato do que voltou do armazenamento (não é confiável: pode ser de outra versão ou corrompido). */
+function dadosValidos(x: unknown): x is Dados {
+  if (typeof x !== "object" || x === null) return false;
+  const d = x as Record<string, unknown>;
+  return (
+    ehFonte(d["listings"]) &&
+    (d["vendas"] === null || ehFonte(d["vendas"])) &&
+    (d["buyOrders"] === null || ehFonte(d["buyOrders"]))
+  );
+}
+
+/** Muda quando o formato de `Dados` muda: o armazém sobrevive à atualização da extensão. */
+const VERSAO_CACHE = "v1";
+
+export function criarAnalisador(deps: { client: Client; agora: () => number; armazem?: Armazem }) {
+  const cache = criarCache<Dados>(deps.agora, {
+    ...(deps.armazem === undefined ? {} : { armazem: deps.armazem }),
+    valida: dadosValidos,
+  });
 
   async function buscar(item: ItemParaAnalise): Promise<{ valor: Dados; guardar: boolean }> {
     const { client } = deps;
@@ -189,10 +213,11 @@ export function criarAnalisador(deps: { client: Client; agora: () => number }) {
     const c = validarConfig(configBruta);
     if (!c.ok) return Promise.resolve(c);
     const config = c.value;
-    const chave =
+    const chave = `${VERSAO_CACHE}|${
       item.float === null
         ? `${item.marketHashName}|sem-float`
-        : cacheKey({ marketHashName: item.marketHashName, float: item.float, stickers: item.stickers });
+        : cacheKey({ marketHashName: item.marketHashName, float: item.float, stickers: item.stickers })
+    }`;
     return cache
       .obter(chave, config.validadeCacheSeg * 1000, opcoes.forcar === true, () => buscar(item))
       .then((e) => ({ ok: true as const, value: calcular(item, config, e.valor, e) }));
