@@ -1,0 +1,553 @@
+[
+ {
+  "auction_details": {
+   "expires_at": "2026-12-10T17:37:38.914267Z",
+   "min_next_bid": 155,
+   "reserve_price": 10,
+   "top_bid": {
+    "created_at": "2026-11-26T19:27:24.052174Z",
+    "id": "1046145166169211718",
+    "price": 130,
+    "state": "active"
+   }
+  },
+  "created_at": "2026-11-26T17:37:38.915759Z",
+  "id": "1046117546102753928",
+  "is_seller": false,
+  "is_watchlisted": false,
+  "item": {
+   "badges": [
+    "rare_sticker"
+   ],
+   "collection": "The Phoenix Collection",
+   "cs2_screenshot_at": "2026-10-13T16:39:31.864717Z",
+   "def_index": 7,
+   "float_value": 0.34676215052604675,
+   "is_commodity": false,
+   "is_souvenir": false,
+   "is_stattrak": false,
+   "item_name": "AK-47 | Redline",
+   "market_hash_name": "AK-47 | Redline (Field-Tested)",
+   "paint_index": 282,
+   "paint_seed": 574,
+   "quality": 4,
+   "rarity": 5,
+   "rarity_name": "Classified",
+   "stickers": [
+    {
+     "name": "Sticker | Virtus.Pro | Katowice 2014",
+     "reference": {
+      "price": 41900,
+      "quantity": 16,
+      "updated_at": "2026-11-26T00:50:52.006968Z"
+     },
+     "slot": 1,
+     "stickerId": 77
+    },
+    {
+     "name": "Sticker | mousesports (Holo) | Katowice 2014",
+     "reference": {
+      "price": 462271,
+      "quantity": 5,
+      "updated_at": "2026-11-26T00:50:49.756715Z"
+     },
+     "slot": 3,
+     "stickerId": 66
+    }
+   ],
+   "tradable": 0,
+   "type": "skin",
+   "type_name": "Skin",
+   "wear_name": "Field-Tested"
+  },
+  "price": 130,
+  "reference": {
+   "base_price": 2087,
+   "float_factor": 0.987857,
+   "last_updated": "2026-11-26T23:32:46.98549Z",
+   "predicted_price": 2062,
+   "quantity": 14206,
+   "sticker_overpay": {
+    "lower_half_sigma": 0.040552,
+    "lower_sigma": 0.0360307,
+    "predicted_price": 22744,
+    "total_price": 503771,
+    "upper_half_sigma": 0.049983,
+    "upper_sigma": 0.0558283
+   }
+  },
+  "seller": {
+   "statistics": {
+    "median_trade_time": 76,
+    "total_avoided_trades": 0,
+    "total_failed_trades": 0,
+    "total_trades": 58,
+    "total_verified_trades": 58
+   }
+  },
+  "state": "listed",
+  "type": "auction",
+  "watchers": 10
+ },
+ {
+  "auction_details": {
+   "expires_at": "2026-11-29T15:59:51.662716Z",
+   "min_next_bid": 1391,
+   "reserve_price": 1341,
+   "top_bid": {
+    "created_at": "2026-11-27T00:35:03.580649Z",
+    "id": "1046222591041341949",
+    "price": 1341,
+    "state": "active"
+   }
+  },
+  "created_at": "2026-11-26T15:59:51.665893Z",
+  "id": "1046092937072609296",
+  "is_seller": false,
+  "is_watchlisted": false,
+  "item": {
+   "collection": "The Phoenix Collection",
+   "cs2_screenshot_at": "2026-11-26T16:00:52.961443Z",
+   "def_index": 7,
+   "float_value": 0.29564985632896423,
+   "is_commodity": false,
+   "is_souvenir": false,
+   "is_stattrak": false,
+   "item_name": "AK-47 | Redline",
+   "market_hash_name": "AK-47 | Redline (Field-Tested)",
+   "paint_index": 282,
+   "paint_seed": 196,
+   "quality": 4,
+   "rarity": 5,
+   "rarity_name": "Classified",
+   "stickers": [
+    {
+     "name": "Sticker | Virtus.Pro (Holo) | Stockholm 2021",
+     "reference": {
+      "price": 328,
+      "quantity": 908,
+      "updated_at": "2026-11-26T00:50:52.006968Z"
+     },
+     "slot": 0,
+     "stickerId": 5039
+    },
+    {
+     "name": "Sticker | Renegades (Holo) | Stockholm 2021",
+     "reference": {
+      "price": 219,
+      "quantity": 848,
+      "updated_at": "2026-11-26T00:50:49.756715Z"
+     },
+     "slot": 1,
+     "stickerId": 5027
+    },
+    {
+     "name": "Sticker | Tyloo (Holo) | Stockholm 2021",
+     "reference": {
+      "price": 512,
+      "quantity": 903,
+      "updated_at": "2026-11-26T00:50:52.006968Z"
+     },
+     "slot": 2,
+     "stickerId": 5023
+    },
+    {
+     "name": "Sticker | Heroic (Holo) | Stockholm 2021",
+     "reference": {
+      "price": 151,
+      "quantity": 134,
+      "updated_at": "2026-11-26T04:56:25.608709Z"
+     },
+     "slot": 3,
+     "stickerId": 5011
+    },
+    {
+     "name": "Sticker | RED Canids (Holo) | Budapest 2025",
+     "offset_x": -0.042395264,
+     "offset_y": 0.072977275,
+     "reference": {
+      "price": 275,
+      "quantity": 159,
+      "updated_at": "2026-11-26T00:50:49.756715Z"
+     },
+     "slot": 1,
+     "stickerId": 9603
+    }
+   ],
+   "tradable": 0,
+   "type": "skin",
+   "type_name": "Skin",
+   "wear_name": "Field-Tested"
+  },
+  "price": 1341,
+  "reference": {
+   "base_price": 2087,
+   "float_factor": 1.00423,
+   "last_updated": "2026-11-26T22:00:10.782722Z",
+   "predicted_price": 2096,
+   "quantity": 14206,
+   "sticker_overpay": {
+    "lower_half_sigma": 0.0248813,
+    "lower_sigma": 0.000889611,
+    "predicted_price": 121,
+    "total_price": 1512,
+    "upper_half_sigma": 0.133245,
+    "upper_sigma": 0.193843
+   }
+  },
+  "seller": {
+   "statistics": {
+    "median_trade_time": 2275,
+    "total_avoided_trades": 15,
+    "total_failed_trades": 4,
+    "total_trades": 520,
+    "total_verified_trades": 516
+   }
+  },
+  "state": "listed",
+  "type": "auction",
+  "watchers": 3
+ },
+ {
+  "auction_details": {
+   "expires_at": "2026-11-27T22:29:42.217883Z",
+   "min_next_bid": 1700,
+   "reserve_price": 100,
+   "top_bid": {
+    "created_at": "2026-11-27T00:17:36.666359Z",
+    "id": "1046218199965764438",
+    "price": 1650,
+    "state": "active"
+   }
+  },
+  "created_at": "2026-11-24T22:29:42.219086Z",
+  "id": "1045466268431419726",
+  "is_seller": false,
+  "is_watchlisted": false,
+  "item": {
+   "collection": "The Phoenix Collection",
+   "cs2_screenshot_at": "2026-09-28T20:40:28.963038Z",
+   "def_index": 7,
+   "float_value": 0.25041088461875916,
+   "is_commodity": false,
+   "is_souvenir": false,
+   "is_stattrak": false,
+   "item_name": "AK-47 | Redline",
+   "market_hash_name": "AK-47 | Redline (Field-Tested)",
+   "paint_index": 282,
+   "paint_seed": 844,
+   "quality": 4,
+   "rarity": 5,
+   "rarity_name": "Classified",
+   "stickers": [
+    {
+     "name": "Sticker | ESL One Cologne 2014 (Red)",
+     "reference": {
+      "price": 6499,
+      "quantity": 37,
+      "updated_at": "2026-11-26T00:50:47.581623Z"
+     },
+     "slot": 0,
+     "stickerId": 155
+    },
+    {
+     "name": "Sticker | ESL One Cologne 2014 (Red)",
+     "reference": {
+      "price": 6499,
+      "quantity": 37,
+      "updated_at": "2026-11-26T00:50:47.581623Z"
+     },
+     "slot": 1,
+     "stickerId": 155
+    },
+    {
+     "name": "Sticker | ESL One Cologne 2014 (Red)",
+     "reference": {
+      "price": 6499,
+      "quantity": 37,
+      "updated_at": "2026-11-26T00:50:47.581623Z"
+     },
+     "slot": 2,
+     "stickerId": 155
+    },
+    {
+     "name": "Sticker | ESL One Cologne 2014 (Red)",
+     "reference": {
+      "price": 6499,
+      "quantity": 37,
+      "updated_at": "2026-11-26T00:50:47.581623Z"
+     },
+     "slot": 3,
+     "stickerId": 155
+    }
+   ],
+   "tradable": 0,
+   "type": "skin",
+   "type_name": "Skin",
+   "wear_name": "Field-Tested"
+  },
+  "price": 1650,
+  "reference": {
+   "base_price": 2087,
+   "float_factor": 1.0631,
+   "last_updated": "2026-11-26T22:30:31.492795Z",
+   "predicted_price": 2219,
+   "quantity": 14206,
+   "sticker_overpay": {
+    "lower_half_sigma": 0.201567,
+    "lower_sigma": 0.153176,
+    "predicted_price": 6189,
+    "total_price": 26012,
+    "upper_half_sigma": 0.279971,
+    "upper_sigma": 0.313595
+   }
+  },
+  "seller": {
+   "statistics": {
+    "median_trade_time": 81,
+    "total_avoided_trades": 0,
+    "total_failed_trades": 0,
+    "total_trades": 886,
+    "total_verified_trades": 886
+   }
+  },
+  "state": "listed",
+  "type": "auction",
+  "watchers": 45
+ },
+ {
+  "auction_details": {
+   "expires_at": "2026-12-01T16:05:39.372115Z",
+   "min_next_bid": 1758,
+   "reserve_price": 4,
+   "top_bid": {
+    "created_at": "2026-11-26T20:20:25.823629Z",
+    "id": "1046158511484046284",
+    "price": 1708,
+    "state": "active"
+   }
+  },
+  "created_at": "2026-11-24T16:05:39.373534Z",
+  "id": "1045369619734462780",
+  "is_seller": false,
+  "is_watchlisted": false,
+  "item": {
+   "badges": [
+    "rare_sticker"
+   ],
+   "collection": "The Phoenix Collection",
+   "cs2_screenshot_at": "2026-11-23T07:16:58.61999Z",
+   "def_index": 7,
+   "float_value": 0.3275722563266754,
+   "is_commodity": false,
+   "is_souvenir": false,
+   "is_stattrak": false,
+   "item_name": "AK-47 | Redline",
+   "market_hash_name": "AK-47 | Redline (Field-Tested)",
+   "paint_index": 282,
+   "paint_seed": 961,
+   "quality": 4,
+   "rarity": 5,
+   "rarity_name": "Classified",
+   "stickers": [
+    {
+     "name": "Sticker | iBUYPOWER | Katowice 2014",
+     "reference": {
+      "price": 381556,
+      "quantity": 11,
+      "updated_at": "2026-11-26T00:50:49.756715Z"
+     },
+     "slot": 0,
+     "stickerId": 59
+    },
+    {
+     "name": "Sticker | Hands Off (Foil)",
+     "reference": {
+      "price": 136,
+      "quantity": 489,
+      "updated_at": "2026-11-26T00:50:49.756715Z"
+     },
+     "slot": 3,
+     "stickerId": 9474
+    },
+    {
+     "name": "Sticker | Hands Off (Foil)",
+     "reference": {
+      "price": 136,
+      "quantity": 489,
+      "updated_at": "2026-11-26T00:50:49.756715Z"
+     },
+     "slot": 2,
+     "stickerId": 9474
+    },
+    {
+     "name": "Sticker | Hands Off (Foil)",
+     "reference": {
+      "price": 136,
+      "quantity": 489,
+      "updated_at": "2026-11-26T00:50:49.756715Z"
+     },
+     "slot": 1,
+     "stickerId": 9474
+    },
+    {
+     "name": "Sticker | 3DMAX (Holo) | Austin 2025",
+     "offset_x": -0.00035224855,
+     "offset_y": -0.01765263,
+     "reference": {
+      "price": 136,
+      "quantity": 308,
+      "updated_at": "2026-11-26T00:50:47.581623Z"
+     },
+     "rotation": 112.5,
+     "slot": 0,
+     "stickerId": 8596,
+     "wear": 0.62
+    }
+   ],
+   "tradable": 0,
+   "type": "skin",
+   "type_name": "Skin",
+   "wear_name": "Field-Tested"
+  },
+  "price": 1708,
+  "reference": {
+   "base_price": 2087,
+   "float_factor": 0.988137,
+   "last_updated": "2026-11-26T22:06:30.530648Z",
+   "predicted_price": 2062,
+   "quantity": 14206,
+   "sticker_overpay": {
+    "lower_half_sigma": 0.064281,
+    "lower_sigma": 0.0573561,
+    "predicted_price": 26183,
+    "total_price": 384927,
+    "upper_half_sigma": 0.0731759,
+    "upper_sigma": 0.076521
+   }
+  },
+  "seller": {
+   "statistics": {
+    "median_trade_time": 948,
+    "total_avoided_trades": 2,
+    "total_failed_trades": 11,
+    "total_trades": 2606,
+    "total_verified_trades": 2595
+   }
+  },
+  "state": "listed",
+  "type": "auction",
+  "watchers": 54
+ },
+ {
+  "created_at": "2026-11-26T19:16:06.30964Z",
+  "id": "1046142323509036504",
+  "is_seller": false,
+  "is_watchlisted": false,
+  "item": {
+   "collection": "The Phoenix Collection",
+   "cs2_screenshot_at": "2026-11-26T19:17:57.975709Z",
+   "def_index": 7,
+   "float_value": 0.3610171377658844,
+   "inspect_link": "steam://rungame/730/76561202255233023/+csgo_econ_action_preview%200010E6BD8FFCBD011807209A022805300438BDAEE3F50340C806620A080210F3261D00000000620A080310F3261D00000000620A08011080391D000000006214080010B53A1D000000003D005E143B450020903B6214080110B53A1D000000003D084223BD45E0C1913D6FC1B188",
+   "is_commodity": false,
+   "is_souvenir": false,
+   "is_stattrak": false,
+   "item_name": "AK-47 | Redline",
+   "market_hash_name": "AK-47 | Redline (Field-Tested)",
+   "paint_index": 282,
+   "paint_seed": 840,
+   "quality": 4,
+   "rarity": 5,
+   "rarity_name": "Classified",
+   "stickers": [
+    {
+     "name": "Sticker | G2 Esports (Holo) | Stockholm 2021",
+     "reference": {
+      "price": 229,
+      "quantity": 1101,
+      "updated_at": "2026-11-26T00:50:49.756715Z"
+     },
+     "slot": 2,
+     "stickerId": 4979
+    },
+    {
+     "name": "Sticker | G2 Esports (Holo) | Stockholm 2021",
+     "reference": {
+      "price": 229,
+      "quantity": 1101,
+      "updated_at": "2026-11-26T00:50:49.756715Z"
+     },
+     "slot": 3,
+     "stickerId": 4979
+    },
+    {
+     "name": "Sticker | FURIA (Holo) | Copenhagen 2024",
+     "reference": {
+      "price": 520,
+      "quantity": 207,
+      "updated_at": "2026-11-26T00:50:49.756715Z"
+     },
+     "slot": 1,
+     "stickerId": 7296
+    },
+    {
+     "name": "Sticker | zont1x (Holo) | Copenhagen 2024",
+     "offset_x": 0.0022639036,
+     "offset_y": 0.004398346,
+     "reference": {
+      "price": 132,
+      "quantity": 80,
+      "updated_at": "2026-11-26T00:50:52.006968Z"
+     },
+     "slot": 0,
+     "stickerId": 7477
+    },
+    {
+     "name": "Sticker | zont1x (Holo) | Copenhagen 2024",
+     "offset_x": -0.039857894,
+     "offset_y": 0.07117057,
+     "reference": {
+      "price": 132,
+      "quantity": 80,
+      "updated_at": "2026-11-26T00:50:52.006968Z"
+     },
+     "slot": 1,
+     "stickerId": 7477
+    }
+   ],
+   "tradable": 0,
+   "type": "skin",
+   "type_name": "Skin",
+   "wear_name": "Field-Tested"
+  },
+  "price": 2081,
+  "reference": {
+   "base_price": 2075,
+   "float_factor": 0.985449,
+   "last_updated": "2026-11-27T01:12:44.514826Z",
+   "predicted_price": 2045,
+   "quantity": 14166,
+   "sticker_overpay": {
+    "lower_half_sigma": 0.010616,
+    "lower_sigma": 8.33137e-05,
+    "predicted_price": 64,
+    "total_price": 1240,
+    "upper_half_sigma": 0.104375,
+    "upper_sigma": 0.179759
+   }
+  },
+  "seller": {
+   "statistics": {
+    "median_trade_time": 0,
+    "total_avoided_trades": 0,
+    "total_failed_trades": 0,
+    "total_trades": 0,
+    "total_verified_trades": 0
+   }
+  },
+  "state": "listed",
+  "type": "buy_now",
+  "watchers": 1
+ }
+]

@@ -1,0 +1,33 @@
+name: CI
+
+# Typecheck e testes. Sem filtro de caminho, para o check `test` sempre reportar
+# (poderá ser obrigatório na main). Nada de build aqui: build é no PC do dono.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Node version
+        run: node --version
+
+      - name: Install (lockfile exato, sem scripts de instalação)
+        run: npm ci --ignore-scripts
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Tests
+        run: npm test
