@@ -25,12 +25,14 @@
 - **Erros meus corrigidos**: limites de listings/vendas trocados na rodada 1 (lidos pela ordem do
   `grep -h`); `max_float=0.12` inválido para Field-Tested na rodada 2.
 - **Feito**: ADR 0001 escrito como **proposto** (`adr/0001-fontes-de-dados-csfloat.md`), aguardando o dono.
-- **Decisão do dono**: repo **público** (`masterlxz/skinradar`). Sobre o ADR 0001: "aprovo, mas talvez
-  não com API, baixando o HTML, que seria mais confiável". **Contradiz a decisão 1 do ADR** (nada de
-  scraping do site), então o ADR segue **Proposto** até o dono esclarecer qual HTML (CSFloat ou
-  marketplaces) e por quê.
-- **Feito também**: repo criado, `.github/` (template de PR e `guard`, do `padrao/`), PR da fundação.
-  Ruleset da `main` **ainda não ligado** (só depois do `guard` verde na `main`, `padrao/README.md`).
-- **Próximo**: dono esclarece API × HTML; mesclar a fundação; ligar o ruleset; plano da Fase 2.
+- **Decisão do dono**: repo **público** (`masterlxz/skinradar`). Sobre o ADR 0001, o dono cogitou HTML
+  no lugar da API (preço em real, limites, dados que faltariam); medi os campos da API (75 em listings,
+  52 em vendas) e ela cobre o que o PRD pede, só não traz real. Dono aceitou: API como fonte,
+  cotação USD→BRL nas configurações, HTML só dos marketplaces de origem. **ADR 0001 Aceito.**
+  Licença **MIT** (mesmo titular do `kin`).
+- **Feito também**: repo criado, `.github/` (template de PR e `guard`, do `padrao/`), PR #1 (fundação,
+  `guard` verde, mesclado em `d288ccf`), ruleset `protect-main` ligado (ativo, `guard` obrigatório),
+  secret scanning, push protection e alertas do Dependabot ligados.
+- **Próximo**: HTML de um card real do DashSkins (ou RentSkins) e plano da Fase 2.
 - **Não verificado**: documentação oficial; outros itens além do Redline FT; a chave está
   em `~/.config/skinradar/csfloat.key` nesta máquina (confirmar se é PC ou VM).
