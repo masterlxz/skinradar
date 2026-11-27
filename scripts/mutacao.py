@@ -372,7 +372,12 @@ def rodar(cmd):
 
 
 def testes():
-    r = rodar(["npm", "test", "--", "--test-reporter=spec"])
+    # Uma mutação pode travar os testes (laço ou promessa que nunca resolve): sem limite o job inteiro
+    # morre calado. Com limite, a mutação sai como INVÁLIDA (rodaram -1 testes) e as outras seguem.
+    try:
+        r = subprocess.run(["npm", "test", "--", "--test-reporter=spec"], capture_output=True, text=True, timeout=120)
+    except subprocess.TimeoutExpired:
+        return -1, set(), 124
     saida = r.stdout + r.stderr
     total = re.search(r"ℹ tests (\d+)", saida)
     falhas = {m.group(1) for m in NOME_FALHA.finditer(saida)}
@@ -389,6 +394,7 @@ def main():
     linhas = ["| Mutação | Previsto | Falharam (nomes) | Veredito |", "|---|---|---|---|"]
     ruins = 0
     for ident, arquivo, antigo, novo, previstos in MUTACOES:
+        print(f"rodando {ident}", flush=True)
         caminho = pathlib.Path(arquivo)
         original = caminho.read_text(encoding="utf-8")
         if original.count(antigo) != 1:
