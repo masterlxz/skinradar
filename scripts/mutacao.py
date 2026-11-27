@@ -162,7 +162,7 @@ MUTACOES = [
      "agora() - g.em < validadeMs", "agora() - g.em <= validadeMs",
      ["a validade é exclusiva"]),
     ("M46 cache guarda análise com fonte falha", "src/analysis/cache.ts",
-     "if (guardar) {", "if (true) {",
+     "if (guardar) {", "if (guardar || valor !== undefined) {",
      ["análise com fonte falha não é guardada"]),
     ("M47 forcar ignorado", "src/analysis/cache.ts",
      "if (!forcar && g !== undefined", "if (g !== undefined",

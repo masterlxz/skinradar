@@ -171,7 +171,18 @@ test("depois de um acerto no armazém, o clique seguinte usa a memória e não l
 const CORROMPIDOS: [string, string][] = [
   ["texto que não é JSON", "{isto não é json"],
   ["valor vazio", JSON.stringify({ valor: {}, em: T0 })],
-  ["listings com 'ok' que não é booleano", JSON.stringify({ valor: { listings: { ok: "sim" } }, em: T0 })],
+  [
+    "listings com 'ok' que não é booleano",
+    JSON.stringify({ valor: { listings: { ok: "sim" }, vendas: null, buyOrders: null }, em: T0 }),
+  ],
+  [
+    "vendas com 'ok' que não é booleano",
+    JSON.stringify({ valor: { listings: { ok: true, value: [] }, vendas: { ok: "sim" }, buyOrders: null }, em: T0 }),
+  ],
+  [
+    "buyOrders ausente em vez de nulo",
+    JSON.stringify({ valor: { listings: { ok: true, value: [] }, vendas: null }, em: T0 }),
+  ],
   ["sem o horário", JSON.stringify({ valor: { listings: { ok: true, value: [] } } })],
   ["horário em texto", JSON.stringify({ valor: { listings: { ok: true, value: [] } }, em: "ontem" })],
   ["nulo", "null"],
