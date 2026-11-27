@@ -89,3 +89,28 @@
 - **Não verificado (2b-2a)**: nenhuma execução contra a API real (só fixtures de 2026-11-27, Redline FT); a
   fronteira exata de 0,002 da âncora distante não tem teste; `priceCents` inválido (não positivo) faria
   `evaluateExit` lançar; só o leitor do DashSkins foi cruzado com o orquestrador.
+- **2b-2b (PR #7, branch `fase-2b2b-partes-puras`)**: partes puras da casca, testáveis no CI sem Chrome.
+  `src/ui/formatar.ts` (R$/US$/%/float/idade, manual, sem `Intl` por causa do NBSP), `src/ui/textos.ts`,
+  `src/ui/painel.ts` (`renderPainel` e `renderEstado`, só `textContent`; teste lê o código e recusa `innerHTML`),
+  `src/extension/mensagens.ts` (`validarPedido`, fronteira de confiança do service worker; fecha o risco do
+  `priceCents` não positivo) e a porta `Armazem` no cache, com chave versionada `v1|` e validação do que volta do
+  armazenamento. Decisões do dono: só `dashskins.com.br` na 1ª versão; cache em `chrome.storage.session`; divisão
+  2b-2b (puro) e 2b-2c (esbuild, manifest, service worker, content script, opções); "siga a recomendação" nas
+  duas perguntas (atualização forçada que falha apaga a entrada velha; textos como escritos).
+  Testes primeiro: no CI do rascunho o typecheck quebrou (4 módulos inexistentes); depois **233 de 233**
+  (82 novos). Mutação: **111 de 111** (M71 a M111 novas, conferidas pelo nome).
+  **Avaliação do esbuild** (para a 2b-2c, medida no registro em 2026-11-27): 0.28.2, MIT, 1 mantenedor no registro,
+  última release 2026-08-08, ~420 mi downloads/semana, 0 avisos no OSV, sem dependência JS (binário por plataforma
+  opcional; `postinstall` existe e o `npm ci --ignore-scripts` do CI não o roda), pré-1.0. Veredito provisório:
+  adotar com ressalva (versão fixa no lockfile, script fino por cima), confiança média. Alternativas: `tsc`
+  emitindo módulos (content script do MV3 não carrega ES modules), Rollup (4 mantenedores, mas pede plugin de
+  TypeScript), WXT (~25 dependências). A decisão final e o `package.json` ficam para a 2b-2c.
+  **Problemas do caminho**: (1) o hook `guard-heavy` barrou um heredoc cujo corpo de PR tinha a palavra `npm test`
+  (usar `Write` + `--body-file`); (2) o workflow `Mutação` morreu calado (SIGTERM, código 143) quando a M111
+  atribuía `innerHTML` com HTML malicioso no `linkedom`, duas vezes; a M111 passou a só provar o teste que lê o
+  código, e o `scripts/mutacao.py` ganhou limite de 120 s por rodada e uma linha de progresso por mutação;
+  (3) M46 e M90 saíram inválida e sobrevivente: a M90 só foi pega depois de um caso corrompido que isola o campo
+  `listings` (os outros campos já recusavam o objeto vazio).
+- **Não verificado (2b-2b)**: o painel nunca foi desenhado num navegador real (só no `linkedom`); o limite de ~10 MB do
+  `chrome.storage.session` e o formato real do que ele devolve; o CSS; o comportamento do `innerHTML` malicioso só é
+  guardado pelo teste do HTML malicioso, sem mutação equivalente.
