@@ -56,8 +56,18 @@
   depois **75 de 75**. Mutação: **31 de 31** (M29 a M31 novas; M20 e M22 reescritas). Valores esperados
   recalculados das 15 vendas da fixture. **Achado**: das 40 vendas reais da API, **31 têm sticker e 9 não**,
   e as 40 cobrem ~10 h; item limpo cai quase sempre em "baixa liquidez" (P13).
-- **Próximo**: mesclar o PR #4; PR B (adaptador do card: dependência de DOM para teste, fixtures dos 2 cards,
-  preço e leitura do card); depois plano da 2b-2 (botão, painel, service worker), que ainda precisa da
-  aba Network da listagem, da rolagem e de um card do RentSkins.
+- **PR B (PR #5, branch `adaptador-dashskins-card`)**: leitor do card do DashSkins (`src/adapters/dashskins`:
+  `findCards`, `readCard`, `parseBrlPrice`), com `linkedom` 0.18.15 só nos testes (ISC, 20 pacotes, 0 avisos OSV,
+  não executa JavaScript; escolhido pelo dono sobre jsdom e happy-dom). Fixtures: os 2 cards reais, sem
+  `srcset` nem conteúdo de SVG. Testes primeiro: no CI do rascunho, 96 testes, 79 passaram e 17 falharam
+  (4 testes novos já passavam por artefato do esboço); depois **96 de 96**. Mutação: **39 de 39** (M32 a M39
+  novas). **Defeito achado pelo CI**: `card.textContent` cola os textos sem separador ("RifleWithdrawable"),
+  então `\bWithdrawable\b` não casava; corrigido lendo cada `<span>` isolado (o mesmo erro ocorreria no
+  navegador). Preço só no formato inglês (`R$1,399.99`); `R$ 1.399,99` vira erro, nunca número errado.
+- **Não verificado**: só 2 cards (luvas FT e AK-47 FN), 1 idioma e 2 categorias; facas, agentes, adesivos,
+  StatTrak, Souvenir, itens sem float, chaveiros e o português não foram vistos (P15); o parser do `linkedom`
+  não é o do navegador, o teste real é o Chrome do dono na 2b-2.
+- **Próximo**: mesclar o PR #5; plano da 2b-2 (botão, painel, service worker, manifest, build), que ainda
+  precisa da aba Network da listagem, da rolagem e de um card do RentSkins.
 - **Não verificado**: documentação oficial; outros itens além do Redline FT; a chave está
   em `~/.config/skinradar/csfloat.key` nesta máquina (confirmar se é PC ou VM).
