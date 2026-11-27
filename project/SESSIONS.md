@@ -131,3 +131,24 @@
   fim do card e a aparência do overlay; o formato real da chave do CSFloat (qualquer texto sem espaço é aceito); se um
   content script consegue ler `chrome.storage.local` (a documentação que conheço diz que sim por padrão: na 2b-2d o
   content script não importa nada de armazenamento); o limite de 10 MB do `storage.session`.
+- **2b-2d (PR #9, branch `fase-2b2d-cola-e-build`)**: cola do Chrome e build. Módulos puros testados: `remetente.ts`
+  (só mensagem do próprio id, de `dashskins.com.br` ou `www.`, https, sem porta), `agendador.ts` (debounce de 200 ms),
+  `overlay.ts` (um painel por vez, `adoptedStyleSheets` ou `<style>`), `pagina-opcoes.ts` (testado contra o
+  `opcoes.html` de verdade; a chave nunca volta à tela). Cola fina, só verificada pelo typecheck e pelo Chrome:
+  `chrome.d.ts` próprio, `background.ts`, `content.ts`, `opcoes.ts`. Arquivos estáticos com teste de contrato:
+  `extension/manifest.json` (permissão só `storage`, host só `https://csfloat.com/*`, content script só no DashSkins .com.br)
+  e `extension/opcoes.html`. `scripts/build.mjs` (esbuild iife, 3 entradas) e `package.json` com **esbuild 0.28.2** exato
+  (aprovado pelo dono; o lockfile ganhou só ele e 26 pacotes de plataforma, sem remoção; `npm install --package-lock-only
+  --ignore-scripts` rodou na VM, sem instalar nada). Roteiro para o dono: `lab/testar-extensao-no-chrome.md`.
+  **Achado da documentação do Chrome (context7, 2026-11-27) que corrige a 2b-2c**: `storage.local` é exposto a content
+  scripts por padrão (só `session` não é); o worker passa a chamar `setAccessLevel({ accessLevel: "TRUSTED_CONTEXTS" })` no
+  início. Decisões do dono: "manda bala" nas duas perguntas (o ícone abre as opções; os dois hosts, com e sem `www.`).
+  Testes primeiro com esqueletos: no CI do rascunho, 361 testes, 309 passaram e 52 falharam (53 novos; 1 passou com o
+  manifest vazio, por ser um teste de ausência); depois **361 de 361**. Mutação: **186 de 186** (M150 a M186, inclusive
+  sobre `manifest.json`, `opcoes.html`, `package.json` e `build.mjs`). A M165 teve que ser trocada duas vezes (a primeira
+  e a segunda quebravam o typecheck).
+- **Não verificado (2b-2d)**: **tudo o que só o Chrome mostra**: se o build roda no PC do dono; se a extensão carrega;
+  o encaixe do botão no card e a aparência do overlay; como os cards chegam à página (rolagem, troca de página); se a
+  CSP do site afeta o overlay; se o `setAccessLevel` realmente esconde o `storage.local` do content script (o roteiro tem
+  o passo); se `www.dashskins.com.br` existe; o `fetch` do worker ao CSFloat com o cabeçalho `Authorization` e o
+  `host_permissions`; a taxa oficial (P9) e a cotação (P3).
