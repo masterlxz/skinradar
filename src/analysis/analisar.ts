@@ -198,5 +198,5 @@ export function criarAnalisador(deps: { client: Client; agora: () => number }) {
       .then((e) => ({ ok: true as const, value: calcular(item, config, e.valor, e) }));
   }
 
-  return { analisar };
+  return analisar;
 }
