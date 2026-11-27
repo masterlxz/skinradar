@@ -1,0 +1,740 @@
+[
+ {
+  "created_at": "2026-11-26T19:16:06.30964Z",
+  "id": "1046142323509036504",
+  "is_seller": false,
+  "is_watchlisted": false,
+  "item": {
+   "collection": "The Phoenix Collection",
+   "cs2_screenshot_at": "2026-11-26T19:17:57.975709Z",
+   "def_index": 7,
+   "float_value": 0.3610171377658844,
+   "inspect_link": "steam://rungame/730/76561202255233023/+csgo_econ_action_preview%200010E6BD8FFCBD011807209A022805300438BDAEE3F50340C806620A080210F3261D00000000620A080310F3261D00000000620A08011080391D000000006214080010B53A1D000000003D005E143B450020903B6214080110B53A1D000000003D084223BD45E0C1913D6FC1B188",
+   "is_commodity": false,
+   "is_souvenir": false,
+   "is_stattrak": false,
+   "item_name": "AK-47 | Redline",
+   "market_hash_name": "AK-47 | Redline (Field-Tested)",
+   "paint_index": 282,
+   "paint_seed": 840,
+   "quality": 4,
+   "rarity": 5,
+   "rarity_name": "Classified",
+   "stickers": [
+    {
+     "name": "Sticker | G2 Esports (Holo) | Stockholm 2021",
+     "reference": {
+      "price": 229,
+      "quantity": 1101,
+      "updated_at": "2026-11-26T00:50:49.756715Z"
+     },
+     "slot": 2,
+     "stickerId": 4979
+    },
+    {
+     "name": "Sticker | G2 Esports (Holo) | Stockholm 2021",
+     "reference": {
+      "price": 229,
+      "quantity": 1101,
+      "updated_at": "2026-11-26T00:50:49.756715Z"
+     },
+     "slot": 3,
+     "stickerId": 4979
+    },
+    {
+     "name": "Sticker | FURIA (Holo) | Copenhagen 2024",
+     "reference": {
+      "price": 520,
+      "quantity": 207,
+      "updated_at": "2026-11-26T00:50:49.756715Z"
+     },
+     "slot": 1,
+     "stickerId": 7296
+    },
+    {
+     "name": "Sticker | zont1x (Holo) | Copenhagen 2024",
+     "offset_x": 0.0022639036,
+     "offset_y": 0.004398346,
+     "reference": {
+      "price": 132,
+      "quantity": 80,
+      "updated_at": "2026-11-26T00:50:52.006968Z"
+     },
+     "slot": 0,
+     "stickerId": 7477
+    },
+    {
+     "name": "Sticker | zont1x (Holo) | Copenhagen 2024",
+     "offset_x": -0.039857894,
+     "offset_y": 0.07117057,
+     "reference": {
+      "price": 132,
+      "quantity": 80,
+      "updated_at": "2026-11-26T00:50:52.006968Z"
+     },
+     "slot": 1,
+     "stickerId": 7477
+    }
+   ],
+   "tradable": 0,
+   "type": "skin",
+   "type_name": "Skin",
+   "wear_name": "Field-Tested"
+  },
+  "price": 2081,
+  "reference": {
+   "base_price": 2075,
+   "float_factor": 0.985449,
+   "last_updated": "2026-11-27T01:12:44.514826Z",
+   "predicted_price": 2045,
+   "quantity": 14166,
+   "sticker_overpay": {
+    "lower_half_sigma": 0.010616,
+    "lower_sigma": 8.33137e-05,
+    "predicted_price": 64,
+    "total_price": 1240,
+    "upper_half_sigma": 0.104375,
+    "upper_sigma": 0.179759
+   }
+  },
+  "seller": {
+   "statistics": {
+    "median_trade_time": 0,
+    "total_avoided_trades": 0,
+    "total_failed_trades": 0,
+    "total_trades": 0,
+    "total_verified_trades": 0
+   }
+  },
+  "state": "listed",
+  "type": "buy_now",
+  "watchers": 1
+ },
+ {
+  "created_at": "2026-11-26T11:23:23.452028Z",
+  "id": "1046023361060277203",
+  "is_seller": false,
+  "is_watchlisted": false,
+  "item": {
+   "collection": "The Phoenix Collection",
+   "cs2_screenshot_at": "2026-11-26T11:23:30.854927Z",
+   "def_index": 7,
+   "float_value": 0.3467157185077667,
+   "inspect_link": "steam://rungame/730/76561202255233023/+csgo_econ_action_preview%200010B4E48299CB011807209A022805300438B989C6F50340A6026214080110BB171D000000003DD69373BE45604322BC6214080010BB171D000000003D5E6A60BE45008039BA6214080010BB171D000000003DD0FEF7BD4500B28E3A6214080010BB171D000000003DA0BEDEBC45801C1F3B09841F10",
+   "is_commodity": false,
+   "is_souvenir": false,
+   "is_stattrak": false,
+   "item_name": "AK-47 | Redline",
+   "market_hash_name": "AK-47 | Redline (Field-Tested)",
+   "paint_index": 282,
+   "paint_seed": 294,
+   "quality": 4,
+   "rarity": 5,
+   "rarity_name": "Classified",
+   "stickers": [
+    {
+     "name": "Sticker | Astralis | London 2018",
+     "offset_x": -0.23786864,
+     "offset_y": -0.009903759,
+     "reference": {
+      "price": 92,
+      "quantity": 68,
+      "updated_at": "2026-11-26T00:50:47.581623Z"
+     },
+     "slot": 1,
+     "stickerId": 3003
+    },
+    {
+     "name": "Sticker | Astralis | London 2018",
+     "offset_x": -0.21915576,
+     "offset_y": -0.00070762634,
+     "reference": {
+      "price": 92,
+      "quantity": 68,
+      "updated_at": "2026-11-26T00:50:47.581623Z"
+     },
+     "slot": 0,
+     "stickerId": 3003
+    },
+    {
+     "name": "Sticker | Astralis | London 2018",
+     "offset_x": -0.121091485,
+     "offset_y": 0.0010886788,
+     "reference": {
+      "price": 92,
+      "quantity": 68,
+      "updated_at": "2026-11-26T00:50:47.581623Z"
+     },
+     "slot": 0,
+     "stickerId": 3003
+    },
+    {
+     "name": "Sticker | Astralis | London 2018",
+     "offset_x": -0.027190506,
+     "offset_y": 0.0024278462,
+     "reference": {
+      "price": 92,
+      "quantity": 68,
+      "updated_at": "2026-11-26T00:50:47.581623Z"
+     },
+     "slot": 0,
+     "stickerId": 3003
+    }
+   ],
+   "tradable": 0,
+   "type": "skin",
+   "type_name": "Skin",
+   "wear_name": "Field-Tested"
+  },
+  "price": 2102,
+  "reference": {
+   "base_price": 2087,
+   "float_factor": 0.98771,
+   "last_updated": "2026-11-26T23:23:24.298246Z",
+   "predicted_price": 2061,
+   "quantity": 14206,
+   "sticker_overpay": {
+    "lower_half_sigma": 0.0374789,
+    "lower_sigma": 0.00486208,
+    "predicted_price": 39,
+    "total_price": 368,
+    "upper_half_sigma": 0.201648,
+    "upper_sigma": 0.296016
+   }
+  },
+  "seller": {
+   "statistics": {
+    "median_trade_time": 0,
+    "total_avoided_trades": 0,
+    "total_failed_trades": 0,
+    "total_trades": 0,
+    "total_verified_trades": 0
+   }
+  },
+  "state": "listed",
+  "type": "buy_now",
+  "watchers": 2
+ },
+ {
+  "created_at": "2026-11-26T14:38:46.964485Z",
+  "id": "1046072533037746306",
+  "is_seller": false,
+  "is_watchlisted": false,
+  "item": {
+   "collection": "The Phoenix Collection",
+   "cs2_screenshot_at": "2026-11-26T14:39:27.365265Z",
+   "def_index": 7,
+   "float_value": 0.3382202982902527,
+   "inspect_link": "steam://rungame/730/76561202255233023/+csgo_econ_action_preview%20001097FCF48FC7011807209A022805300438B6D6B4F5034059620A0800108F171D00000000620A0801108F171D00000000620A0802108F171D00000000620A0803108F171D000000000AD5C080",
+   "is_commodity": false,
+   "is_souvenir": false,
+   "is_stattrak": false,
+   "item_name": "AK-47 | Redline",
+   "market_hash_name": "AK-47 | Redline (Field-Tested)",
+   "paint_index": 282,
+   "paint_seed": 89,
+   "quality": 4,
+   "rarity": 5,
+   "rarity_name": "Classified",
+   "stickers": [
+    {
+     "name": "Sticker | FaZe Clan | London 2018",
+     "reference": {
+      "price": 247,
+      "quantity": 80,
+      "updated_at": "2026-11-26T00:50:47.581623Z"
+     },
+     "slot": 0,
+     "stickerId": 2959
+    },
+    {
+     "name": "Sticker | FaZe Clan | London 2018",
+     "reference": {
+      "price": 247,
+      "quantity": 80,
+      "updated_at": "2026-11-26T00:50:47.581623Z"
+     },
+     "slot": 1,
+     "stickerId": 2959
+    },
+    {
+     "name": "Sticker | FaZe Clan | London 2018",
+     "reference": {
+      "price": 247,
+      "quantity": 80,
+      "updated_at": "2026-11-26T00:50:47.581623Z"
+     },
+     "slot": 2,
+     "stickerId": 2959
+    },
+    {
+     "name": "Sticker | FaZe Clan | London 2018",
+     "reference": {
+      "price": 247,
+      "quantity": 80,
+      "updated_at": "2026-11-26T00:50:47.581623Z"
+     },
+     "slot": 3,
+     "stickerId": 2959
+    }
+   ],
+   "tradable": 0,
+   "type": "skin",
+   "type_name": "Skin",
+   "wear_name": "Field-Tested"
+  },
+  "price": 2108,
+  "reference": {
+   "base_price": 2087,
+   "float_factor": 0.989559,
+   "last_updated": "2026-11-26T20:38:35.538881Z",
+   "predicted_price": 2065,
+   "quantity": 14206,
+   "sticker_overpay": {
+    "lower_half_sigma": 0.0431131,
+    "lower_sigma": 0.00670191,
+    "predicted_price": 102,
+    "total_price": 928,
+    "upper_half_sigma": 0.187666,
+    "upper_sigma": 0.263014
+   }
+  },
+  "seller": {
+   "statistics": {
+    "median_trade_time": 276,
+    "total_avoided_trades": 0,
+    "total_failed_trades": 0,
+    "total_trades": 70,
+    "total_verified_trades": 70
+   }
+  },
+  "state": "listed",
+  "type": "buy_now",
+  "watchers": 2
+ },
+ {
+  "created_at": "2026-11-26T20:05:54.443833Z",
+  "id": "1046154856651425681",
+  "is_seller": false,
+  "is_watchlisted": false,
+  "item": {
+   "collection": "The Phoenix Collection",
+   "cs2_screenshot_at": "2026-11-26T20:06:26.295064Z",
+   "def_index": 7,
+   "float_value": 0.28016576170921326,
+   "inspect_link": "steam://rungame/730/76561202255233023/+csgo_econ_action_preview%200010EB9E8DE5CA011807209A022805300438E3E3BDF4034063621408021088291D1F856B3F3DD03F75BD45F033BFBCF6ED3ED4",
+   "is_commodity": false,
+   "is_souvenir": false,
+   "is_stattrak": false,
+   "item_name": "AK-47 | Redline",
+   "market_hash_name": "AK-47 | Redline (Field-Tested)",
+   "paint_index": 282,
+   "paint_seed": 99,
+   "quality": 4,
+   "rarity": 5,
+   "rarity_name": "Classified",
+   "stickers": [
+    {
+     "name": "Sticker | Smoke Criminal",
+     "offset_x": -0.05987531,
+     "offset_y": -0.023340195,
+     "reference": {
+      "price": 176,
+      "quantity": 115,
+      "updated_at": "2026-11-26T00:50:52.006968Z"
+     },
+     "slot": 2,
+     "stickerId": 5256,
+     "wear": 0.92
+    }
+   ],
+   "tradable": 0,
+   "type": "skin",
+   "type_name": "Skin",
+   "wear_name": "Field-Tested"
+  },
+  "price": 2111,
+  "reference": {
+   "base_price": 2087,
+   "float_factor": 1.0114294,
+   "last_updated": "2026-11-26T20:05:17.430504Z",
+   "predicted_price": 2111,
+   "quantity": 14206,
+   "sticker_overpay": {
+    "total_price": 169
+   }
+  },
+  "seller": {
+   "statistics": {
+    "median_trade_time": 124,
+    "total_avoided_trades": 0,
+    "total_failed_trades": 0,
+    "total_trades": 10,
+    "total_verified_trades": 10
+   }
+  },
+  "state": "listed",
+  "type": "buy_now",
+  "watchers": 1
+ },
+ {
+  "created_at": "2026-11-26T17:03:32.3113Z",
+  "id": "1046108962023408017",
+  "is_seller": false,
+  "is_watchlisted": false,
+  "item": {
+   "collection": "The Phoenix Collection",
+   "cs2_screenshot_at": "2026-11-26T17:04:22.28652Z",
+   "def_index": 7,
+   "float_value": 0.35808736085891724,
+   "inspect_link": "steam://rungame/730/76561202255233023/+csgo_econ_action_preview%200010C9C2F6B5CB011807209A022805300438BAAEDDF503408B056214080310D90C1D000000003D10478BBC45009A99BA6214080010AF351D000000003D80E4A73B45008D8E3B6214080210F61A1D000000003D803C233B45005A223A6214080110F81A1D000000003D00C049384540BD8FBBAE968230",
+   "is_commodity": false,
+   "is_souvenir": false,
+   "is_stattrak": false,
+   "item_name": "AK-47 | Redline",
+   "market_hash_name": "AK-47 | Redline (Field-Tested)",
+   "paint_index": 282,
+   "paint_seed": 651,
+   "quality": 4,
+   "rarity": 5,
+   "rarity_name": "Classified",
+   "stickers": [
+    {
+     "name": "Sticker | Boris",
+     "offset_x": -0.017001659,
+     "offset_y": -0.0011718869,
+     "reference": {
+      "price": 31,
+      "quantity": 39,
+      "updated_at": "2026-11-26T00:50:47.581623Z"
+     },
+     "slot": 3,
+     "stickerId": 1625
+    },
+    {
+     "name": "Sticker | TeSeS (Holo) | Paris 2023",
+     "offset_x": 0.005123675,
+     "offset_y": 0.0043503046,
+     "reference": {
+      "price": 50,
+      "quantity": 202,
+      "updated_at": "2026-11-26T05:56:40.930694Z"
+     },
+     "slot": 0,
+     "stickerId": 6831
+    },
+    {
+     "name": "Sticker | Master Guardian Elite",
+     "offset_x": 0.0024907887,
+     "offset_y": 0.00061932206,
+     "reference": {
+      "price": 8,
+      "quantity": 14,
+      "updated_at": "2026-11-26T00:50:49.756715Z"
+     },
+     "slot": 2,
+     "stickerId": 3446
+    },
+    {
+     "name": "Sticker | Distinguished Master Guardian",
+     "offset_x": 4.810095e-05,
+     "offset_y": -0.004386574,
+     "reference": {
+      "price": 2,
+      "quantity": 27,
+      "updated_at": "2026-11-26T10:57:33.794974Z"
+     },
+     "slot": 1,
+     "stickerId": 3448
+    }
+   ],
+   "tradable": 0,
+   "type": "skin",
+   "type_name": "Skin",
+   "wear_name": "Field-Tested"
+  },
+  "price": 2144,
+  "reference": {
+   "base_price": 2087,
+   "float_factor": 0.985214,
+   "last_updated": "2026-11-26T23:03:31.380197Z",
+   "predicted_price": 2056,
+   "quantity": 14206,
+   "sticker_overpay": {
+    "total_price": 93
+   }
+  },
+  "seller": {
+   "statistics": {
+    "median_trade_time": 25,
+    "total_avoided_trades": 0,
+    "total_failed_trades": 2,
+    "total_trades": 226,
+    "total_verified_trades": 224
+   }
+  },
+  "state": "listed",
+  "type": "buy_now",
+  "watchers": 1
+ },
+ {
+  "created_at": "2026-11-24T15:37:02.36118Z",
+  "id": "1045362418064165681",
+  "is_seller": false,
+  "is_watchlisted": false,
+  "item": {
+   "collection": "The Phoenix Collection",
+   "cs2_screenshot_at": "2026-11-24T15:37:41.692669Z",
+   "def_index": 7,
+   "float_value": 0.35759875178337097,
+   "is_commodity": false,
+   "is_souvenir": false,
+   "is_stattrak": false,
+   "item_name": "AK-47 | Redline",
+   "market_hash_name": "AK-47 | Redline (Field-Tested)",
+   "paint_index": 282,
+   "paint_seed": 490,
+   "quality": 4,
+   "rarity": 5,
+   "rarity_name": "Classified",
+   "stickers": [
+    {
+     "name": "Sticker | FaZe | 2020 RMR",
+     "reference": {
+      "price": 17,
+      "quantity": 609,
+      "updated_at": "2026-11-26T00:50:47.581623Z"
+     },
+     "slot": 0,
+     "stickerId": 4737
+    },
+    {
+     "name": "Sticker | FaZe | 2020 RMR",
+     "reference": {
+      "price": 17,
+      "quantity": 609,
+      "updated_at": "2026-11-26T00:50:47.581623Z"
+     },
+     "slot": 1,
+     "stickerId": 4737
+    },
+    {
+     "name": "Sticker | FaZe | 2020 RMR",
+     "reference": {
+      "price": 17,
+      "quantity": 609,
+      "updated_at": "2026-11-26T00:50:47.581623Z"
+     },
+     "slot": 2,
+     "stickerId": 4737
+    },
+    {
+     "name": "Sticker | FaZe | 2020 RMR",
+     "reference": {
+      "price": 17,
+      "quantity": 609,
+      "updated_at": "2026-11-26T00:50:47.581623Z"
+     },
+     "slot": 3,
+     "stickerId": 4737
+    },
+    {
+     "name": "Sticker | The Fragger",
+     "offset_x": -0.150992,
+     "offset_y": 0.12650052,
+     "reference": {
+      "price": 48,
+      "quantity": 88,
+      "updated_at": "2026-11-26T00:50:52.006968Z"
+     },
+     "slot": 0,
+     "stickerId": 993
+    }
+   ],
+   "tradable": 0,
+   "type": "skin",
+   "type_name": "Skin",
+   "wear_name": "Field-Tested"
+  },
+  "price": 2147,
+  "reference": {
+   "base_price": 2087,
+   "float_factor": 0.986288,
+   "last_updated": "2026-11-26T19:45:47.227846Z",
+   "predicted_price": 2058,
+   "quantity": 14206,
+   "sticker_overpay": {
+    "total_price": 117
+   }
+  },
+  "seller": {
+   "statistics": {
+    "median_trade_time": 0,
+    "total_avoided_trades": 0,
+    "total_failed_trades": 24,
+    "total_trades": 24,
+    "total_verified_trades": 0
+   }
+  },
+  "state": "listed",
+  "type": "buy_now",
+  "watchers": 0
+ },
+ {
+  "created_at": "2026-11-25T22:50:43.556747Z",
+  "id": "1045833946732040086",
+  "is_seller": false,
+  "is_watchlisted": false,
+  "item": {
+   "collection": "The Phoenix Collection",
+   "cs2_screenshot_at": "2026-11-25T22:52:21.2382Z",
+   "def_index": 7,
+   "float_value": 0.2909259498119354,
+   "is_commodity": false,
+   "is_souvenir": false,
+   "is_stattrak": false,
+   "item_name": "AK-47 | Redline",
+   "market_hash_name": "AK-47 | Redline (Field-Tested)",
+   "paint_index": 282,
+   "paint_seed": 886,
+   "quality": 4,
+   "rarity": 5,
+   "rarity_name": "Classified",
+   "tradable": 0,
+   "type": "skin",
+   "type_name": "Skin",
+   "wear_name": "Field-Tested"
+  },
+  "price": 2148,
+  "reference": {
+   "base_price": 2087,
+   "float_factor": 1.00412,
+   "last_updated": "2026-11-26T22:51:47.452618Z",
+   "predicted_price": 2096,
+   "quantity": 14206,
+   "sticker_overpay": {}
+  },
+  "seller": {
+   "statistics": {
+    "median_trade_time": 71,
+    "total_avoided_trades": 1,
+    "total_failed_trades": 3,
+    "total_trades": 376,
+    "total_verified_trades": 373
+   }
+  },
+  "state": "listed",
+  "type": "buy_now",
+  "watchers": 4
+ },
+ {
+  "created_at": "2026-11-24T15:24:32.85832Z",
+  "id": "1045359274420733049",
+  "is_seller": false,
+  "is_watchlisted": false,
+  "item": {
+   "collection": "The Phoenix Collection",
+   "cs2_screenshot_at": "2026-11-24T15:24:45.180844Z",
+   "def_index": 7,
+   "float_value": 0.3203927278518677,
+   "is_commodity": false,
+   "is_souvenir": false,
+   "is_stattrak": false,
+   "item_name": "AK-47 | Redline",
+   "market_hash_name": "AK-47 | Redline (Field-Tested)",
+   "paint_index": 282,
+   "paint_seed": 410,
+   "quality": 4,
+   "rarity": 5,
+   "rarity_name": "Classified",
+   "stickers": [
+    {
+     "name": "Sticker | FaZe | 2020 RMR",
+     "offset_x": 0.06644988,
+     "offset_y": -0.0018768907,
+     "reference": {
+      "price": 17,
+      "quantity": 609,
+      "updated_at": "2026-11-26T00:50:47.581623Z"
+     },
+     "slot": 1,
+     "stickerId": 4737
+    },
+    {
+     "name": "Sticker | FaZe | 2020 RMR",
+     "offset_x": 0.1538111,
+     "offset_y": 0.010693848,
+     "reference": {
+      "price": 17,
+      "quantity": 609,
+      "updated_at": "2026-11-26T00:50:47.581623Z"
+     },
+     "slot": 3,
+     "stickerId": 4737
+    },
+    {
+     "name": "Sticker | FaZe | 2020 RMR",
+     "offset_x": 0.22776306,
+     "offset_y": 0.011512041,
+     "reference": {
+      "price": 17,
+      "quantity": 609,
+      "updated_at": "2026-11-26T00:50:47.581623Z"
+     },
+     "slot": 3,
+     "stickerId": 4737
+    },
+    {
+     "name": "Sticker | FaZe | 2020 RMR",
+     "offset_x": 0.17215806,
+     "offset_y": 0.111702025,
+     "reference": {
+      "price": 17,
+      "quantity": 609,
+      "updated_at": "2026-11-26T00:50:47.581623Z"
+     },
+     "rotation": -24,
+     "slot": 3,
+     "stickerId": 4737
+    },
+    {
+     "name": "Sticker | FaZe | 2020 RMR",
+     "reference": {
+      "price": 17,
+      "quantity": 609,
+      "updated_at": "2026-11-26T00:50:47.581623Z"
+     },
+     "slot": 3,
+     "stickerId": 4737
+    }
+   ],
+   "tradable": 0,
+   "type": "skin",
+   "type_name": "Skin",
+   "wear_name": "Field-Tested"
+  },
+  "price": 2155,
+  "reference": {
+   "base_price": 2075,
+   "float_factor": 0.988491,
+   "last_updated": "2026-11-27T00:55:26.452027Z",
+   "predicted_price": 2051,
+   "quantity": 14166,
+   "sticker_overpay": {
+    "total_price": 80
+   }
+  },
+  "seller": {
+   "statistics": {
+    "median_trade_time": 28,
+    "total_avoided_trades": 0,
+    "total_failed_trades": 0,
+    "total_trades": 13,
+    "total_verified_trades": 13
+   }
+  },
+  "state": "listed",
+  "type": "buy_now",
+  "watchers": 0
+ }
+]

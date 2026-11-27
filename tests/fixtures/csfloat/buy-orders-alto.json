@@ -1,0 +1,74 @@
+[
+ {
+  "hybrid_properties": {},
+  "market_hash_name": "AK-47 | Redline (Field-Tested)",
+  "price": 2040,
+  "qty": 10
+ },
+ {
+  "hybrid_properties": {},
+  "market_hash_name": "AK-47 | Redline (Field-Tested)",
+  "price": 2030,
+  "qty": 2
+ },
+ {
+  "hybrid_properties": {
+   "max_float": 0.38,
+   "min_float": 0.15
+  },
+  "market_hash_name": "AK-47 | Redline (Field-Tested)",
+  "price": 2030,
+  "qty": 2
+ },
+ {
+  "hybrid_properties": {},
+  "market_hash_name": "AK-47 | Redline (Field-Tested)",
+  "price": 2020,
+  "qty": 1
+ },
+ {
+  "hybrid_properties": {},
+  "market_hash_name": "AK-47 | Redline (Field-Tested)",
+  "price": 2010,
+  "qty": 1
+ },
+ {
+  "hybrid_properties": {
+   "max_float": 0.38,
+   "min_float": 0.15
+  },
+  "market_hash_name": "AK-47 | Redline (Field-Tested)",
+  "price": 1950,
+  "qty": 1
+ },
+ {
+  "hybrid_properties": {},
+  "market_hash_name": "AK-47 | Redline (Field-Tested)",
+  "price": 1940,
+  "qty": 2
+ },
+ {
+  "hybrid_properties": {},
+  "market_hash_name": "AK-47 | Redline (Field-Tested)",
+  "price": 1910,
+  "qty": 2
+ },
+ {
+  "hybrid_properties": {},
+  "market_hash_name": "AK-47 | Redline (Field-Tested)",
+  "price": 1690,
+  "qty": 1
+ },
+ {
+  "hybrid_properties": {},
+  "market_hash_name": "AK-47 | Redline (Field-Tested)",
+  "price": 400,
+  "qty": 1
+ },
+ {
+  "hybrid_properties": {},
+  "market_hash_name": "AK-47 | Redline (Field-Tested)",
+  "price": 176,
+  "qty": 1
+ }
+]
