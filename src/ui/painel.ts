@@ -3,7 +3,7 @@ import type { Analise } from "../analysis/analisar.ts";
 import type { ExitResult } from "../core/profit.ts";
 import type { ErroResposta } from "../extension/mensagens.ts";
 import { dolar, floatBr, idade, percentual, reais } from "./formatar.ts";
-import { rotuloCampo, rotuloClassificacao, textoAviso, textoErro } from "./textos.ts";
+import { motivoCard, rotuloCampo, rotuloClassificacao, textoAviso, textoErro } from "./textos.ts";
 
 // Regra deste arquivo: todo texto entra por `textContent`. O nome da skin e os stickers vêm do HTML do
 // marketplace e não podem virar HTML (nenhuma API que interprete texto como marcação; há teste que confere).
@@ -152,7 +152,7 @@ export function renderPainel(doc: Document, a: Analise, agora: number): HTMLElem
 function textoEstadoErro(erro: ErroResposta | ErroCard): string {
   switch (erro.kind) {
     case "card_ilegivel":
-      return ""; // ESQUELETO (Etapa D): o texto vem depois dos testes
+      return `Não consegui ler este card: ${motivoCard(erro.motivo)}.`;
     case "config_invalida":
       return `Configuração incompleta: preencha nas opções da extensão: ${erro.campos.map(rotuloCampo).join(", ")}.`;
     case "sem_chave":
