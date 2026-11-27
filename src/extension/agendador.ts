@@ -10,7 +10,25 @@ export interface Agendador {
   cancelar(): void;
 }
 
-// ESQUELETO (Etapa D): compila e falha por asserção. A implementação vem depois dos testes.
-export function criarAgendador(_timers: Timers, _ms: number, _fn: () => void): Agendador {
-  throw new Error("não implementado");
+export function criarAgendador(timers: Timers, ms: number, fn: () => void): Agendador {
+  let id: unknown;
+  let pendente = false;
+
+  function cancelar(): void {
+    if (!pendente) return;
+    timers.clearTimeout(id);
+    pendente = false;
+  }
+
+  return {
+    agendar() {
+      cancelar();
+      pendente = true;
+      id = timers.setTimeout(() => {
+        pendente = false;
+        fn();
+      }, ms);
+    },
+    cancelar,
+  };
 }

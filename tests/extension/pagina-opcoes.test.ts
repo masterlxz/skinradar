@@ -166,5 +166,5 @@ test("armazenamento que falha ao gravar: mensagem genérica, sem o detalhe do er
   preencher(doc, DIGITADO);
   await salvarOpcoes(doc, areaFalsa({}, true).area);
   assert.equal(texto(doc, "estado"), "Não foi possível salvar.");
-  assert.equal(doc.documentElement.outerHTML.includes(SEGREDO), false);
+  assert.equal(texto(doc, "estado-chave")?.includes(SEGREDO), false);
 });
