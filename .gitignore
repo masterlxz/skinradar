@@ -1,0 +1,11 @@
+# Segredos (chave de API do CSFloat fica só no PC do dono)
+.env
+.env.*
+*.key
+*.secret
+lab/medicoes/
+
+# Node / build da extensão
+node_modules/
+dist/
+*.log
