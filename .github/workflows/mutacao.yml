@@ -1,0 +1,31 @@
+name: Mutação
+
+# Mutação planejada (scripts/mutacao.py): troca um trecho por vez e confere, pelo NOME, que o
+# teste previsto falha. Roda quando código, testes ou o próprio script mudam, e sob demanda.
+# Não é check obrigatório da main.
+on:
+  pull_request:
+    paths:
+      - "src/**"
+      - "tests/**"
+      - "scripts/mutacao.py"
+      - ".github/workflows/mutacao.yml"
+  workflow_dispatch:
+
+jobs:
+  mutacao:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install (lockfile exato, sem scripts de instalação)
+        run: npm ci --ignore-scripts
+
+      - name: Mutação planejada
+        run: python3 -I scripts/mutacao.py
