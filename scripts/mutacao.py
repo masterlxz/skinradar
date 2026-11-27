@@ -528,7 +528,7 @@ MUTACOES = [
      "contentor.appendChild(fecharBotao);", "corpo.appendChild(fecharBotao);",
      ["o botão × não fica dentro do corpo", "montar: começa escondido e vazio"]),
     ("M165 overlay: folha construível ignorada", "src/extension/overlay.ts",
-     'typeof CSSStyleSheet === "function"', 'typeof CSSStyleSheet === "string"',
+     "    r.adoptedStyleSheets.push(folha);\n", "",
      ["com folha de estilo construível"]),
     ("M166 opções: aviso da chave sempre 'salva'", "src/extension/pagina-opcoes.ts",
      "avisarChave(doc, chave !== null);", "avisarChave(doc, true);",
