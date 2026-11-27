@@ -114,3 +114,20 @@
 - **Não verificado (2b-2b)**: o painel nunca foi desenhado num navegador real (só no `linkedom`); o limite de ~10 MB do
   `chrome.storage.session` e o formato real do que ele devolve; o CSS; o comportamento do `innerHTML` malicioso só é
   guardado pelo teste do HTML malicioso, sem mutação equivalente.
+- **2b-2c (PR #8, branch `fase-2b2c-logica-da-casca`)**: lógica da casca atrás de portas injetadas, testada no CI
+  sem `chrome.*`. `src/extension/armazenamento.ts` (`Area`, `armazemDeSessao`, `lerOpcoes`, `gravarOpcoes`),
+  `servico.ts` (`criarServico().tratar`: o único código que lê a chave; lê as opções a cada pedido, recria o analisador
+  quando a chave muda, devolve `interno` sem repassar a mensagem da exceção), `formulario.ts` (`lerFormulario` e
+  `paraFormulario`, unidades humanas, no máximo 2 casas em taxa, custos e piso, erros na ordem da página) e `card.ts`
+  (`criarControlador`: botão "Analisar no SkinRadar" por card, "Analisando…", botão desabilitado e clique repetido
+  ignorado, "Atualizar" com `forcar`). `painel.ts` ganhou o erro `card_ilegivel`. Decisões do dono: dois PRs (lógica
+  testável agora, cola e build na 2b-2d); painel num overlay fixo, um por vez; só `dashskins.com.br`; esbuild 0.28.2
+  aprovado; "siga a recomendação" (chave = texto sem espaço de 1 a 200 caracteres; taxa, custos e piso com até 2 casas).
+  Testes primeiro **com esqueletos que compilam** (regra nova da Etapa D): no CI do rascunho, 308 testes, 233 passaram
+  e 75 falharam, todos os novos, pelo "não implementado" do esqueleto; depois **308 de 308**. Mutação: **149 de 149**
+  (M112 a M149 novas, conferidas pelo nome). **Falha minha de processo**: acrescentei um teste ao `painel.test.ts` com
+  `cat >>` no Bash em vez de `Edit` (o `CLAUDE.md` manda `Edit`/`Write`); o conteúdo aparece no diff do PR.
+- **Não verificado (2b-2c)**: o clique foi testado com o `click()` do `linkedom`, não no Chrome; o encaixe do botão no
+  fim do card e a aparência do overlay; o formato real da chave do CSFloat (qualquer texto sem espaço é aceito); se um
+  content script consegue ler `chrome.storage.local` (a documentação que conheço diz que sim por padrão: na 2b-2d o
+  content script não importa nada de armazenamento); o limite de 10 MB do `storage.session`.
