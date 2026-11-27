@@ -71,3 +71,21 @@
   precisa da aba Network da listagem, da rolagem e de um card do RentSkins.
 - **Não verificado**: documentação oficial; outros itens além do Redline FT; a chave está
   em `~/.config/skinradar/csfloat.key` nesta máquina (confirmar se é PC ou VM).
+- **2b-2a (PR #6, branch `fase-2b2a-orquestrador`)**: orquestrador puro `src/analysis` (`config.ts`, `cache.ts`,
+  `analisar.ts`): liga o item lido, o cliente do CSFloat e o núcleo, e devolve o resultado do painel
+  (3 saídas em reais separadas, classificação, avisos, erro por fonte). A 2b-2 foi dividida: esta fatia não
+  tem DOM, build nem `chrome.*`; a casca (esbuild, manifest, service worker, painel, opções) é a 2b-2b.
+  Decisões do dono: fatia 2b-2a primeiro; esbuild e `chrome.storage.local` com página de opções na 2b-2b
+  (esbuild ainda passa pela avaliação de dependência); âncora = a mais próxima entre os listings já baixados,
+  sem chamada extra, com aviso acima de 0,002 (**ajusta a decisão 2 do ADR 0001**, que previa janela de ±0,002
+  ampliando por passos). Config sem padrão para taxa, cotação, janela de float, piso e validade do cache (P9, P3,
+  P11); padrões só ROI 15%, mínimo 5 vendas, custos 0. O cache guarda os dados do CSFloat, não a conclusão
+  (preço de compra e taxa mudam sem rede), e não guarda análise com fonte falha (P17). Dois cliques seguidos
+  dividem uma busca só (registro síncrono da promessa em voo). `ItemParaAnalise` desacopla do marketplace.
+  Testes primeiro: no CI do rascunho o typecheck quebrou (módulo inexistente, `npm test` nem rodou); depois
+  **151 de 151** (55 novos). Mutação: **70 de 70** (M40 a M70 novas, conferidas pelo nome; M44, M50, M52, M63,
+  M67 e M68 derrubaram também testes extras). **Erro meu**: `criarAnalisador` devolvia `{ analisar }` e os testes
+  esperavam a função; só o typecheck do CI mostrou.
+- **Não verificado (2b-2a)**: nenhuma execução contra a API real (só fixtures de 2026-11-27, Redline FT); a
+  fronteira exata de 0,002 da âncora distante não tem teste; `priceCents` inválido (não positivo) faria
+  `evaluateExit` lançar; só o leitor do DashSkins foi cruzado com o orquestrador.

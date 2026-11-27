@@ -34,7 +34,9 @@ devolveu como `2081`, o que descarta reais e implica ~5,65 R$/US$, mas falta ver
 1. **Fonte única no MVP:** a API do CSFloat com a chave do usuário, enviada em `Authorization`. Nenhum
    endpoint além dos três acima; nada de scraping do site.
 2. **Anúncio-âncora:** o `buy_now` do mesmo `market_hash_name` com o float mais próximo do float do item
-   analisado (janela `min_float`/`max_float` de ±0,002, ampliando por passos se não houver). Sem float
+   analisado (janela `min_float`/`max_float` de ±0,002, ampliando por passos se não houver; **ajustado na
+   2b-2a, 2026-11-27: sem chamada extra, usa-se a mais próxima entre os 200 listings já baixados e avisa-se
+   quando a distância passa de 0,002**). Sem float
    conhecido, a análise de Buy Orders fica "dados insuficientes" em vez de usar uma âncora qualquer.
 3. **Filtro local das Buy Orders:** ordens genéricas e de faixa de float entram se o float do item cabe na
    faixa (`min_float` a `max_float`); ordens com `applied_stickers` ficam **separadas** e não contam como
