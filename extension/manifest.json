@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "SkinRadar",
+  "version": "0.1.0",
+  "description": "Analisa anúncios de skins de CS2 contra o CSFloat, só quando você clica.",
+  "minimum_chrome_version": "120",
+  "permissions": ["storage"],
+  "host_permissions": ["https://csfloat.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://dashskins.com.br/*", "https://www.dashskins.com.br/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_ui": {
+    "page": "opcoes.html",
+    "open_in_tab": true
+  },
+  "action": {
+    "default_title": "SkinRadar: abrir as opções"
+  }
+}

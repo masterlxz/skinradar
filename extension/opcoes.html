@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkinRadar: opções</title>
+  <style>
+    body { font: 14px/1.5 system-ui, sans-serif; max-width: 640px; margin: 24px auto; padding: 0 16px; color: #1c1c24; }
+    h1 { font-size: 20px; }
+    fieldset { border: 1px solid #c8c8d4; border-radius: 8px; margin: 0 0 16px; padding: 12px 16px; }
+    legend { font-weight: 600; padding: 0 6px; }
+    label { display: block; font-weight: 600; margin-top: 10px; }
+    .dica { display: block; font-weight: 400; color: #5c5c70; font-size: 12px; }
+    input { width: 100%; box-sizing: border-box; padding: 6px 8px; margin-top: 4px; font: inherit; }
+    input[aria-invalid="true"] { border: 2px solid #c0392b; }
+    button { padding: 8px 16px; font: inherit; cursor: pointer; }
+    #estado { margin-top: 12px; font-weight: 600; }
+    #estado-chave { color: #5c5c70; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <h1>SkinRadar: opções</h1>
+  <form id="formulario" novalidate>
+    <fieldset>
+      <legend>CSFloat</legend>
+      <label for="chave">Chave da API do CSFloat
+        <span class="dica">Fica só neste navegador. Em branco, mantém a chave já salva.</span>
+      </label>
+      <input id="chave" name="chave" type="password" autocomplete="off" spellcheck="false">
+      <div id="estado-chave"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Conversão e taxas</legend>
+      <label for="cotacaoUsdBrl">Cotação USD→BRL
+        <span class="dica">Reais por dólar, ex.: 5,65. O CSFloat não informa a moeda: os valores são tratados como dólar.</span>
+      </label>
+      <input id="cotacaoUsdBrl" name="cotacaoUsdBrl" type="text" inputmode="decimal" autocomplete="off">
+
+      <label for="taxaPct">Taxa de venda (%)
+        <span class="dica">Até 2 casas decimais, ex.: 2,5. Confira a taxa oficial do CSFloat antes de confiar no lucro.</span>
+      </label>
+      <input id="taxaPct" name="taxaPct" type="text" inputmode="decimal" autocomplete="off">
+
+      <label for="custosReais">Outros custos por operação (R$)
+        <span class="dica">Opcional. Até 2 casas decimais. Em branco vale 0.</span>
+      </label>
+      <input id="custosReais" name="custosReais" type="text" inputmode="decimal" autocomplete="off">
+    </fieldset>
+
+    <fieldset>
+      <legend>Análise</legend>
+      <label for="roiMinPct">ROI mínimo para "interessante" (%)
+        <span class="dica">Opcional. Em branco vale 15.</span>
+      </label>
+      <input id="roiMinPct" name="roiMinPct" type="text" inputmode="decimal" autocomplete="off">
+
+      <label for="janelaFloat">Janela de float das vendas
+        <span class="dica">Quanto o float de uma venda pode diferir do item, ex.: 0,05.</span>
+      </label>
+      <input id="janelaFloat" name="janelaFloat" type="text" inputmode="decimal" autocomplete="off">
+
+      <label for="minVendas">Mínimo de vendas comparáveis
+        <span class="dica">Opcional. Abaixo disso a amostra é insuficiente. Em branco vale 5.</span>
+      </label>
+      <input id="minVendas" name="minVendas" type="text" inputmode="numeric" autocomplete="off">
+
+      <label for="pisoBuyOrderUsd">Piso das Buy Orders (US$)
+        <span class="dica">Ordens abaixo disso são ignoradas. Até 2 casas decimais, ex.: 10,00.</span>
+      </label>
+      <input id="pisoBuyOrderUsd" name="pisoBuyOrderUsd" type="text" inputmode="decimal" autocomplete="off">
+
+      <label for="validadeMin">Validade do cache (minutos)
+        <span class="dica">Quanto tempo reaproveitar os dados do CSFloat. 0 desliga o cache.</span>
+      </label>
+      <input id="validadeMin" name="validadeMin" type="text" inputmode="decimal" autocomplete="off">
+    </fieldset>
+
+    <button type="submit">Salvar</button>
+    <div id="estado" role="status"></div>
+  </form>
+  <script src="opcoes.js"></script>
+</body>
+</html>
